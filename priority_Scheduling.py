@@ -1,6 +1,15 @@
+def waitingTime(processes, n, wt): 
+	wt[0] = 0
+
+	for i in range(1, n): 
+		wt[i] = processes[i - 1][1] + wt[i - 1] 
+
 def priorityScheduling(proc, n): 
 
 	proc = sorted(proc, key = lambda proc:proc[2],reverse =True); 
+    print("Order in which processes gets executed") 
+	for i in proc: 
+		print(i[0], end = " ") 
 
 if __name__ =="__main__": 
 	

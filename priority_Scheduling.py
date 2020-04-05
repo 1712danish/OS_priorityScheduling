@@ -4,6 +4,11 @@ def waitingTime(processes, n, wt):
 	for i in range(1, n): 
 		wt[i] = processes[i - 1][1] + wt[i - 1] 
 
+def turnAroundTime(processes, n, wt, tat): 
+	
+	for i in range(n): 
+		tat[i] = processes[i][1] + wt[i]         
+
 def priorityScheduling(proc, n): 
 
 	proc = sorted(proc, key = lambda proc:proc[2],reverse =True); 
